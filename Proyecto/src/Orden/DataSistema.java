@@ -4,7 +4,11 @@
  * and open the template in the editor.
  */
 package Orden;
+import Cliente.Cliente;
+import Producto.Producto;
+
 import java.util.ArrayList;
+
 /**
  *
  * @author deleo

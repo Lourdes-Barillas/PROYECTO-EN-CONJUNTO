@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package Orden;
+import Cliente.Cliente;
+
 import java.util.Date;
 /**
  *
