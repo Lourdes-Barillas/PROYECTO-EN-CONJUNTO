@@ -1,10 +1,12 @@
 package Orden;
+import Producto.Producto;
 public class ItemOrden {
     int noLinea;
     int cantidad;
-    //Producto producto;
+    Producto producto;
     public ItemOrden(int pNoLinea,int pCantidad,int pIdProducto){     
-        
+        noLinea=pNoLinea;
+        cantidad=pCantidad;
     }
   
     public static double getTotalItem(){      
@@ -14,6 +16,7 @@ public class ItemOrden {
     
     @Override
     public String toString(){
+
         return "";
     }
     
