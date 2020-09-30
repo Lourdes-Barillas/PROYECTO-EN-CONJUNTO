@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frames.Reportes.Productos.ReporteProductos">
+   <children>
+      <TableView layoutX="36.0" layoutY="69.0" prefHeight="304.0" prefWidth="526.0">
+        <columns>
+          <TableColumn prefWidth="83.0" text="id" />
+          <TableColumn prefWidth="192.0" text="Producto" />
+            <TableColumn prefWidth="132.0" text="Marca" />
+            <TableColumn prefWidth="118.0" text="Precio" />
+        </columns>
+      </TableView>
+      <Button layoutX="514.0" layoutY="26.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="65.0" text="Regresar" />
+   </children>
+</AnchorPane>
