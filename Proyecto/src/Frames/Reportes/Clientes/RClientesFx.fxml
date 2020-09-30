@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frames.Reportes.Clientes.ReporteClientes">
+   <children>
+      <Button layoutX="21.0" layoutY="31.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="85.0" text="Individuales" />
+      <Button layoutX="106.0" layoutY="31.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="85.0" text="Empresas" />
+      <Button layoutX="475.0" layoutY="31.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="85.0" text="Salir" />
+      <TableView layoutX="18.0" layoutY="108.0" prefHeight="266.0" prefWidth="559.0">
+        <columns>
+          <TableColumn prefWidth="183.0" text="Id" />
+          <TableColumn prefWidth="285.0" text="DPI o Contacto" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
