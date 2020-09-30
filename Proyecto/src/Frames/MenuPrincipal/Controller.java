@@ -1,5 +1,6 @@
-package Frames;
+package Frames.MenuPrincipal;
 
+import Frames.PruebaVentanas;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -9,7 +10,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Controller {
-    private  PruebaVentanas programaPrincipal;
+    private PruebaVentanas programaPrincipal;
 
 
     public void setProgramaPrincipal(PruebaVentanas programaPrincipal){

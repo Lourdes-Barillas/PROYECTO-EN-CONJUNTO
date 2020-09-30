@@ -1,5 +1,7 @@
 package Frames;
 
+import Frames.MenuPrincipal.Controller;
+import Frames.VenOrdenPrincipal.OrdenController;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -30,7 +32,7 @@ public class PruebaVentanas extends Application {
 
     public void mostrarVentanaPrincipal(){
         try {
-            FXMLLoader loader = new FXMLLoader(PruebaVentanas.class.getResource("Menu.FXML"));
+            FXMLLoader loader = new FXMLLoader(PruebaVentanas.class.getResource("MenuPrincipal/Menu.fxml"));
             rootPane = (AnchorPane) loader.load();
             Scene scene = new Scene(rootPane);
             stagePrincipal.setTitle("Menu");
@@ -50,7 +52,7 @@ public class PruebaVentanas extends Application {
 
     public void mostrarVentanaSecundaria(){
         try{
-            FXMLLoader loader = new FXMLLoader(PruebaVentanas.class.getResource("Orden.fxml"));
+            FXMLLoader loader = new FXMLLoader(PruebaVentanas.class.getResource("VenOrdenPrincipal/Orden.fxml"));
             AnchorPane ventanaOrden = (AnchorPane) loader.load();
             Stage ventana = new Stage();
             ventana.setTitle("Orden");

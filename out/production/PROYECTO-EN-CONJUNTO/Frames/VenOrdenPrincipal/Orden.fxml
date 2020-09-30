@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frames.VenOrdenPrincipal.OrdenController">
+   <children>
+      <Button layoutX="320.0" layoutY="238.0" mnemonicParsing="false" text="Ir al menú" />
+      <ComboBox layoutX="197.0" layoutY="93.0" prefHeight="25.0" prefWidth="219.0" promptText="-Seleccione el tipo de cliente-" />
+      <ComboBox layoutX="197.0" layoutY="137.0" prefHeight="25.0" prefWidth="219.0" promptText="-Seleccione el producto-" />
+      <TextField layoutX="264.0" layoutY="175.0" prefHeight="25.0" prefWidth="152.0" />
+      <Label layoutX="202.0" layoutY="179.0" text="Cantidad:" />
+      <Button layoutX="212.0" layoutY="238.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Ordenar" />
+
+   </children>
+</AnchorPane>
