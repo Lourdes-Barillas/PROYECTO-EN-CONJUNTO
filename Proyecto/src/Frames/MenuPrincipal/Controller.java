@@ -25,6 +25,12 @@ public class Controller {
         programaPrincipal.mostrarVentanaSecundaria();
         programaPrincipal.cerrarVentana(event);
     }
+    @FXML
+    private void ventanaReporte(ActionEvent event){
+        programaPrincipal= new PruebaVentanas();
+        programaPrincipal.mostrarMenuReportes();
+        programaPrincipal.cerrarVentana(event);
+    }
 
     public void menu_Salir(ActionEvent event) {
         Node souce = (Node) event.getSource();

@@ -5,9 +5,9 @@
 
 <AnchorPane prefHeight="200.0" prefWidth="274.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frames.Reportes.Reportes">
    <children>
-      <Button layoutX="71.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Clientes" />
-      <Button layoutX="71.0" layoutY="57.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Productos disponibles" />
-      <Button layoutX="71.0" layoutY="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Orden de Compra" />
-      <Button layoutX="106.0" layoutY="161.0" mnemonicParsing="false" text="Regresar" />
+      <Button layoutX="71.0" layoutY="14.0" mnemonicParsing="false" onAction="#b_Reporte_Clientes" prefHeight="25.0" prefWidth="133.0" text="Clientes" />
+      <Button layoutX="71.0" layoutY="57.0" mnemonicParsing="false" onAction="#b_Reporte_Productos" prefHeight="25.0" prefWidth="133.0" text="Productos disponibles" />
+      <Button layoutX="71.0" layoutY="100.0" mnemonicParsing="false" onAction="#b_Reporte_Orden" prefHeight="25.0" prefWidth="133.0" text="Orden de Compra" />
+      <Button layoutX="106.0" layoutY="161.0" mnemonicParsing="false" onAction="#retorno_Menu" text="Regresar" />
    </children>
 </AnchorPane>

@@ -7,7 +7,7 @@
    <children>
       <Button layoutX="21.0" layoutY="31.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="85.0" text="Individuales" />
       <Button layoutX="106.0" layoutY="31.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="85.0" text="Empresas" />
-      <Button layoutX="475.0" layoutY="31.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="85.0" text="Salir" />
+      <Button layoutX="475.0" layoutY="31.0" mnemonicParsing="false" onAction="#retornar" prefHeight="32.0" prefWidth="85.0" text="Retornar" />
       <TableView layoutX="18.0" layoutY="108.0" prefHeight="266.0" prefWidth="559.0">
         <columns>
           <TableColumn prefWidth="183.0" text="Id" />
