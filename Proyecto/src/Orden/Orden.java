@@ -15,8 +15,8 @@ public class Orden {
     private Date fechaOrden;
     private double precioEnvio;
     private double total;
-    private String tipoEnvio;
-    private String Estado;
+    private int tipoEnvio;
+    private int estado;
     private int diasEnvio;
     
     public Orden(){
@@ -30,7 +30,8 @@ public class Orden {
      * @param pCliente
      * @param pfecha
      */
-    public Orden(int pCliente, Date pfecha){
+    public Orden(int pCliente, Date pfecha, Cliente cliente){
+        this.cliente = cliente;
         //verificar el cliente y buscarlo
         OrdenController controller = new OrdenController();
         this.cliente = controller.getCliente();
@@ -45,11 +46,12 @@ public class Orden {
                     Double totalsd = 0.0, totalcd = 0.0;
                     //getprecio y gettotal
                     for(Producto p : db.getProducto()){
-                        int nlinea = 0;
+                        int nlinea = sigIdOrden();
                         orden = new ItemOrden(nlinea, cantidad, p.idProducto());
                         precio = p.getPrecio();
                         totalsd = orden.getTotalItem();
                         nlinea++;
+                        this.item1 = orden;
                     }//fin for
                     if(this.cliente instanceof Empresa){
                         Double descuento = totalsd * 0.05;
@@ -86,9 +88,29 @@ public class Orden {
         return id;
     }//fin sigIdOrden
 
+    public void setFormaDeEnvio(int diasEnvio, int tipoEnvio) {
+        this.diasEnvio = diasEnvio;
+        this.tipoEnvio = tipoEnvio;
+        if(tipoEnvio == 1){
+            //supongamos que si es de tipo 1 el envío es a domicilio
+            this.precioEnvio = diasEnvio *  3.90;
+        } else if(tipoEnvio == 2){
+            //supongamos que si es de tipo 1 el envío es a un almacen
+            this.precioEnvio = diasEnvio *  1.20;
+        } else if(diasEnvio!=1 && diasEnvio!=2){
+            //imprimir un mensaje
+            diasEnvio = 2;
+        }
+    }
+
     public Orden(Date pfecha){
         new Orden();
         this.fechaOrden = pfecha;
+        this.total = this.precioEnvio + this.item1.getTotalItem();
+        this.estado = 1;
+    }
 
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 }

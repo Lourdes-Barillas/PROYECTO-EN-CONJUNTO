@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
 <AnchorPane fx:id="clienteAnchor" prefHeight="214.0" prefWidth="353.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frames.VenOrdenPrincipal.OrdenController">
    <children>
       <Button layoutX="190.0" layoutY="159.0" mnemonicParsing="false" onAction="#irMenu_Orden" text="Ir al menú" />
-      <ComboBox fx:id="cb_clientetype" layoutX="67.0" layoutY="14.0" prefHeight="25.0" prefWidth="219.0" promptText="-Seleccione el tipo de cliente-" />
-      <ComboBox fx:id="cb_productotype" layoutX="67.0" layoutY="58.0" prefHeight="25.0" prefWidth="219.0" promptText="-Seleccione el producto-" />
-      <TextField fx:id="cantidadProducto" layoutX="134.0" layoutY="96.0" prefHeight="25.0" prefWidth="152.0" />
-      <Label layoutX="72.0" layoutY="100.0" text="Cantidad:" />
+      <ComboBox fx:id="cb_clientetype" layoutX="67.0" layoutY="36.0" prefHeight="25.0" prefWidth="219.0" promptText="-Seleccione el tipo de cliente-" />
+      <ComboBox fx:id="cb_productotype" layoutX="67.0" layoutY="75.0" prefHeight="25.0" prefWidth="219.0" promptText="-Seleccione el producto-" />
+      <TextField fx:id="cantidadProducto" layoutX="132.0" layoutY="114.0" prefHeight="25.0" prefWidth="152.0" />
+      <Label layoutX="70.0" layoutY="118.0" text="Cantidad:" />
       <Button layoutX="82.0" layoutY="159.0" mnemonicParsing="false" onAction="#Ordenar" prefHeight="25.0" prefWidth="82.0" text="Ordenar" />
 
    </children>

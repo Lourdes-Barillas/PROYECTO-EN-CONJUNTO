@@ -11,8 +11,12 @@ public class Producto {
     }
 
 
-    public Producto(int idProducto, String producto, String marca, String precio){
+    public Producto(int idProducto, String producto, String marca, Double precio){
         //todos los parámetros
+        this.idProducto = idProducto;
+        this.producto = producto;
+        this.marca = marca;
+        this.precio = precio;
     }
 
     public int idProducto(){

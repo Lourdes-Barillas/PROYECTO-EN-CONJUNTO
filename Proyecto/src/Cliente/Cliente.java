@@ -3,7 +3,7 @@ package Cliente;
 public class Cliente {
     //static int sigIdCliente;
     private TipoCliente tipoCliente;
-    private int id;
+    public int id;
 
 
     public int getIdCliente(){

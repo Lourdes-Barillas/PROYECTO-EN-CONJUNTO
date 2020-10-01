@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="242.0" prefWidth="291.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frames.vistaind.IndividualController">
+   <children>
+      <TextField fx:id="dpi" layoutX="93.0" layoutY="100.0" />
+      <TextField fx:id="id" layoutX="93.0" layoutY="61.0" />
+      <Label layoutX="68.0" layoutY="65.0" text="Id:" />
+      <Label layoutX="64.0" layoutY="104.0" text="DPI:" />
+      <Button layoutX="127.0" layoutY="156.0" mnemonicParsing="false" onAction="#iniciar" text="iniciar" />
+   </children>
+</AnchorPane>

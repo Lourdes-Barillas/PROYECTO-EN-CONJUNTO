@@ -22,12 +22,6 @@ public class PruebaVentanas extends Application {
     public void start(Stage primaryStage) throws Exception{
         this.stagePrincipal = primaryStage;
         mostrarVentanaPrincipal();
-
-        /*
-        Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
-        primaryStage.show();*/
     }
 
     public void mostrarVentanaPrincipal(){
