@@ -9,11 +9,20 @@ public class ItemOrden {
         cantidad=pCantidad;
     }
   
-    public static double getTotalItem(){      
-      //  return cantidad*precio;
-      return 0;
+    public double getTotalItem(){
+        double total = 0.0;
+        try {
+            total = ((double) cantidad) * producto.getPrecio();
+        }catch (NumberFormatException e){
+            System.out.println(e);
+        }
+        return total;
     }
-    
+
+    public Producto getProducto() {
+        return producto;
+    }
+
     @Override
     public String toString(){
 

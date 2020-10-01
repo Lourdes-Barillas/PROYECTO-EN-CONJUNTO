@@ -12,17 +12,12 @@ import java.util.ResourceBundle;
 public class Controller {
     private PruebaVentanas programaPrincipal;
 
-
-    public void setProgramaPrincipal(PruebaVentanas programaPrincipal){
-        this.programaPrincipal = programaPrincipal;
-    }
-
     public void initialize(URL url, ResourceBundle rb){
         //TODO
     }
 
     public void setControllerPrincipal(PruebaVentanas pruebaVentanas) {
-        this.programaPrincipal = programaPrincipal;
+        this.programaPrincipal = pruebaVentanas;
     }
     @FXML
     private void ventanaOrden(ActionEvent event){

@@ -1,6 +1,6 @@
 package Cliente;
 
 public enum TipoCliente {
-    INDIVIDUAL,
-    EMPRESA,
+    Persona,
+    Empresarial,
 }

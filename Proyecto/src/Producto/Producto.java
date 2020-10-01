@@ -4,7 +4,7 @@ public class Producto {
     private int idProducto;//inicializará con el valor de 200
     private String producto;
     private String marca;
-    private String precio;
+    private Double precio;
 
     public Producto(){
       //se inicializa el sigId aquí
@@ -27,7 +27,7 @@ public class Producto {
         this.marca = marca;
     }
 
-    public void setPrecio(String precio) {
+    public void setPrecio(Double precio) {
         this.precio = precio;
     }
 
@@ -47,8 +47,8 @@ public class Producto {
         return marca;
     }
 
-    public String getPrecio(){
-        return "";
+    public Double getPrecio(){
+        return this.precio;
     }
 
     public String toString(){

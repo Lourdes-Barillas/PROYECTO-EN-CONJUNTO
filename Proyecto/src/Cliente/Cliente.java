@@ -3,12 +3,16 @@ package Cliente;
 public class Cliente {
     //static int sigIdCliente;
     private TipoCliente tipoCliente;
+    private int id;
 
-    public static int sigIdCliente(){
-        return 0;
+
+    public int getIdCliente(){
+        return id;
     }
-    public Cliente(TipoCliente cliente){
 
+
+    public Cliente(TipoCliente cliente){
+        this.tipoCliente = cliente;
     }
     public Cliente(){
         //Todos los parámetros
@@ -19,6 +23,10 @@ public class Cliente {
     }
 
     public String getNombreClase(){
-        return "";
+        String clase = this.tipoCliente.toString();
+        return clase;
     }
+
+
+
 }

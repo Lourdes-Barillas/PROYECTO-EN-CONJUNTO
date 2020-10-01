@@ -62,6 +62,7 @@ public class PruebaVentanas extends Application {
             OrdenController controller = loader.getController();
             controller.setStagePrincipal(ventana);
             controller.setCb_clientetype();
+            controller.setCb_productotype();
             ventana.show();
         } catch (Exception e) {
             e.printStackTrace();
