@@ -18,6 +18,6 @@
             <TableColumn prefWidth="87.0" text="Dias de envio" />
         </columns>
       </TableView>
-      <Button layoutX="476.0" layoutY="39.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="65.0" text="Regresar" />
+      <Button layoutX="476.0" layoutY="39.0" mnemonicParsing="false" onAction="#retornar" prefHeight="31.0" prefWidth="65.0" text="Regresar" />
    </children>
 </AnchorPane>

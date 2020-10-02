@@ -55,11 +55,7 @@ public class Producto {
         return this.precio;
     }
 
-    public String toString(){
-        return "";
-    }
+    public String toString(){ return "["+getNombreClase()+"]id="+idProducto+", producto="+producto+", marca=" +marca+", precio="+precio; }
 
-    public String getClase(){
-        return "";
-    }
+    public String getNombreClase(){ return this.getClass().getSimpleName(); }
 }

@@ -1,6 +1,7 @@
 package Frames;
 
 import Frames.MenuPrincipal.Controller;
+import Frames.Reportes.Reportes;
 import Frames.VenOrdenPrincipal.OrdenController;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -67,6 +68,23 @@ public class PruebaVentanas extends Application {
         Node souce = (Node) event.getSource();
         stagePrincipal = (Stage) souce.getScene().getWindow();
         stagePrincipal.close();
+
+    }
+    public void mostrarMenuReportes(){
+        try {
+            FXMLLoader loader = new FXMLLoader(PruebaVentanas.class.getResource("Reportes/ReportesFx.fxml"));
+            AnchorPane MenusReportes = (AnchorPane) loader.load();
+            Stage reportes = new Stage();
+            reportes.setTitle("Reportes");
+            reportes.initOwner(stagePrincipal);
+            Scene scene = new Scene(MenusReportes);
+            reportes.setScene(scene);
+            Reportes controller = loader.getController();
+            controller.setStagePrincipal(reportes);
+            reportes.show();
+        }catch(IOException e){
+            e.printStackTrace();
+        }
 
     }
 }
