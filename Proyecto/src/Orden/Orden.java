@@ -6,6 +6,7 @@ import Frames.VenOrdenPrincipal.OrdenController;
 import Frames.vistaind.IndividualController;
 import Producto.Producto;
 
+import javax.swing.*;
 import javax.xml.crypto.Data;
 
 public class Orden {
@@ -78,7 +79,7 @@ public class Orden {
                     System.out.println(e);
                     //cuadro de diálogo
                 }//fin catcht
-            }//fin if
+            }
         }// fin for
         Date fecha = new Date();
         orden(fecha, producto);

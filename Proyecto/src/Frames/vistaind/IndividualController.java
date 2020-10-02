@@ -11,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.util.Date;
 
 public class IndividualController {
@@ -43,6 +44,7 @@ public class IndividualController {
                             System.out.println(this.dpi.getCharacters());
                             setCliente(this.dpi.getCharacters().toString(), this.id.getCharacters().toString());
                             System.out.println(this.cliente.toString());
+
 
                             setOrden();
                             Node souce = (Node) event.getSource();
@@ -87,19 +89,23 @@ public class IndividualController {
             DataSistema db = new DataSistema();
             double total = orden.getTotal(this.producto);
             System.out.println(total);
+
             if(this.envio.equalsIgnoreCase("A domicilio")) {
                 orden.setFormaDeEnvio(Integer.parseInt(this.dias), 1);
                 this.ordens = orden;
                 this.prize = total + "";
-            }else {
+            }else if(this.envio.equalsIgnoreCase("A bodega")){
                 orden.setFormaDeEnvio(Integer.parseInt(this.dias), 2);
                 this.prize = total + "";
                 this.ordens = orden;
             }
+            if( this.envio.equalsIgnoreCase(null)){
+                JOptionPane.showMessageDialog(null, "Escoja una forma de envío");
+            }
             db.orden.add(orden);
             System.out.println(db.getOrden().toString());
         }catch (NumberFormatException e){
-            System.out.println(e);
+            JOptionPane.showMessageDialog(null, "Error de numeros escritos en los campos");
         }
     }
 
