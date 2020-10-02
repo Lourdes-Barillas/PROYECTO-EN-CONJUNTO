@@ -83,6 +83,9 @@ public class OrdenController {
             System.out.println(ic);
         }
         //settear los valores de orden
+        this.cantidadProducto.setText("");
+        this.cb_clientetype.setValue(null);
+        this.cb_productotype.setValue(null);
     }
 
     public int getIdProducto(String producto){
