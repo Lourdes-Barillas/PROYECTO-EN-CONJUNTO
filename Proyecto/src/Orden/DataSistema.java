@@ -27,7 +27,15 @@ public class DataSistema {
      * DB de clientes
      */
     public void listaClientes(){
-        this.cliente.add(new Individual("3045269871452", 1));
+        this.cliente.add(new Individual("2584569874596", 1));
+        this.cliente.add(new Individual("3045269871452", 2));
+        this.cliente.add(new Individual("3541257896541", 3));
+        this.cliente.add(new Individual("2136987541236", 4));
+
+        this.cliente.add(new Empresa("bbzumeta@gmail.com", 5));
+        this.cliente.add(new Empresa("zcuffaine@hotmail.com", 6));
+        this.cliente.add(new Empresa("marcela53@yahoo.com", 7));
+        this.cliente.add(new Empresa("mzoruna@gmail.com", 8));
     }
 
 
