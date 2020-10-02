@@ -11,6 +11,9 @@ public class DataSistema {
     public ArrayList<Orden> orden = new ArrayList(8);
     public ArrayList<Producto> producto = new ArrayList(8);
     public ArrayList<ItemOrden> items = new ArrayList(8);
+
+
+
     public ArrayList<Cliente> getCliente() {
         return cliente;
     }

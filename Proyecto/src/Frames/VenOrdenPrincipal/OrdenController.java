@@ -23,6 +23,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import javax.xml.soap.Text;
 import java.io.IOException;
 import java.net.URL;
@@ -172,7 +173,7 @@ public class OrdenController {
                 stage.showAndWait();
             }
         }catch (IOException e){
-
+            JOptionPane.showMessageDialog(null, "Ha ocurrido un error: " + e.toString());
         }
     }
 
@@ -210,7 +211,7 @@ public class OrdenController {
                 stage.showAndWait();
             }
         }catch (IOException e){
-
+            JOptionPane.showMessageDialog(null, "Ha ocurrido un error: " + e.toString());
         }
     }
 
