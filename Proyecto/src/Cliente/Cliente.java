@@ -4,12 +4,12 @@ public class Cliente {
     //static int sigIdCliente;
     private TipoCliente tipoCliente;
     public int id;
-
+   // public String dato;
 
     public int getIdCliente(){
         return id;
     }
-
+    //public String getDato(){ return dato;}
 
     public Cliente(TipoCliente cliente){
         this.tipoCliente = cliente;

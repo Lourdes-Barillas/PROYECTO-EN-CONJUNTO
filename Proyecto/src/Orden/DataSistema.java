@@ -57,11 +57,14 @@ public class DataSistema {
         return producto;
     }
 
-    public void setOrden(Orden orden) {
-        this.orden.add(orden);
-    }
+    public void setOrden(Orden orden) { this.orden.add(orden); }
 
     public ArrayList<Orden> getOrden() {
         return orden;
     }
+
+    public Producto devolverProducto(int a){return this.producto.get(a);}
+    public Cliente devolverCliente(int b){return this.cliente.get(b);}
+    public Orden devolverOrden(int c){return this.orden.get(c);}
+
 }
