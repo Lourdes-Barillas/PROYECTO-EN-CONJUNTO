@@ -1,17 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frames.MenuPrincipal.Controller">
+<AnchorPane prefHeight="309.0" prefWidth="323.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frames.MenuPrincipal.Controller">
    <children>
-      <Button layoutX="204.0" layoutY="145.0" mnemonicParsing="false" onAction="#ventanaOrden" prefHeight="31.0" prefWidth="208.0" text="Asignar una orden" />
-      <Button layoutX="204.0" layoutY="200.0" mnemonicParsing="false" onAction="#ventanaReporte" prefHeight="31.0" prefWidth="208.0" text="Leer reportes" />
-      <Button layoutX="289.0" layoutY="272.0" mnemonicParsing="false" onAction="#menu_Salir" text="Salir" />
-      <Label layoutX="233.0" layoutY="70.0" prefHeight="35.0" prefWidth="142.0" text="¡Bienvenido!">
+      <Button layoutX="58.0" layoutY="145.0" mnemonicParsing="false" onAction="#ventanaOrden" prefHeight="31.0" prefWidth="208.0" style="-fx-background-color: #c2bcbc;" text="Asignar una orden" textFill="#171717">
          <font>
-            <Font size="24.0" />
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button layoutX="58.0" layoutY="207.0" mnemonicParsing="false" onAction="#ventanaReporte" prefHeight="31.0" prefWidth="208.0" style="-fx-background-color: #c2bcbc;" text="Leer reportes" textFill="#171717">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button layoutY="2.0" mnemonicParsing="false" onAction="#menu_Salir" prefHeight="35.0" prefWidth="25.0" style="-fx-background-color: #ffffff;" text="&lt;">
+         <font>
+            <Font name="Agency FB" size="41.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label layoutX="90.0" layoutY="24.0" prefHeight="35.0" prefWidth="157.0" text="¡Bienvenido!" textFill="#140672">
+         <font>
+            <Font name="System Bold" size="24.0" />
          </font>
       </Label>
    </children>

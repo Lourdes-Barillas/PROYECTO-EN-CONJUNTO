@@ -84,13 +84,11 @@ public class Orden {
         orden(fecha, producto);
     }//fin constructor
 
-
-
-
-    public double getTotal(){
-        return 0;
+    public double getTotal(Producto producto){
+        return this.item1.getTotalItem(producto);
         //return precioEnvio*descuento;
     }
+
 
     public int sigIdOrden(){
         DataSistema registro = new DataSistema();

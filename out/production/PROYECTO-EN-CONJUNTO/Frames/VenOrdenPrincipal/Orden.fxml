@@ -1,16 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="clienteAnchor" prefHeight="214.0" prefWidth="353.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frames.VenOrdenPrincipal.OrdenController">
+<AnchorPane fx:id="clienteAnchor" prefHeight="378.0" prefWidth="346.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frames.VenOrdenPrincipal.OrdenController">
    <children>
-      <Button layoutX="190.0" layoutY="159.0" mnemonicParsing="false" onAction="#irMenu_Orden" text="Ir al menú" />
-      <ComboBox fx:id="cb_clientetype" layoutX="67.0" layoutY="36.0" prefHeight="25.0" prefWidth="219.0" promptText="-Seleccione el tipo de cliente-" />
-      <ComboBox fx:id="cb_productotype" layoutX="67.0" layoutY="75.0" prefHeight="25.0" prefWidth="219.0" promptText="-Seleccione el producto-" />
-      <TextField fx:id="cantidadProducto" layoutX="132.0" layoutY="114.0" prefHeight="25.0" prefWidth="152.0" />
-      <Label layoutX="70.0" layoutY="118.0" text="Cantidad:" />
-      <Button layoutX="82.0" layoutY="159.0" mnemonicParsing="false" onAction="#Ordenar" prefHeight="25.0" prefWidth="82.0" text="Ordenar" />
+      <Button centerShape="false" layoutX="200.0" layoutY="295.0" mnemonicParsing="false" onAction="#irMenu_Orden" opacity="0.85" style="-fx-background-color: #d3dbd8;" text="Ir al menú">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <ComboBox fx:id="cb_clientetype" layoutX="64.0" layoutY="93.0" prefHeight="25.0" prefWidth="219.0" promptText="-Seleccione el tipo de cliente-" style="-fx-background-color: #edeff2;" />
+      <ComboBox fx:id="cb_productotype" layoutX="64.0" layoutY="132.0" prefHeight="25.0" prefWidth="219.0" promptText="-Seleccione el producto-" style="-fx-background-color: #edeff2;" />
+      <TextField fx:id="cantidadProducto" layoutX="129.0" layoutY="171.0" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: #edeff2;" />
+      <Label layoutX="67.0" layoutY="175.0" text="Cantidad:" />
+      <Button layoutX="141.0" layoutY="286.0" onAction="#Ordenar" opacity="0.85" prefHeight="42.0" prefWidth="43.0" style="-fx-background-radius: 360; -fx-background-color: #54e8b2;" text="+" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="19.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <TextField fx:id="dias" layoutX="147.0" layoutY="208.0" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #edeff2;" />
+      <Label layoutX="66.0" layoutY="212.0" text="Días de envío:" />
+      <Label layoutX="66.0" layoutY="249.0" text="Método de envío:" />
+      <ComboBox fx:id="envio" layoutX="171.0" layoutY="245.0" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #edeff2;" />
+      <Label layoutX="29.0" layoutY="27.0" text="Total a pagar :">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="precio" layoutX="193.0" layoutY="32.0" text="Q. ">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button alignment="TOP_CENTER" layoutX="64.0" layoutY="295.0" mnemonicParsing="false" onAction="#calcular" style="-fx-background-color: #d3dbd8;" text="Calcular">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
 
    </children>
 </AnchorPane>

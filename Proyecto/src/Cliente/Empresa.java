@@ -13,6 +13,10 @@ public class Empresa extends Cliente{
         return super.getIdCliente();
     }
 
+    public String getContacto() {
+        return contacto;
+    }
+
     @Override
     public String toString() {
         return "Empresa{" +

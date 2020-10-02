@@ -3,6 +3,7 @@ package Frames.VenOrdenPrincipal;
 import Cliente.*;
 import Frames.MenuPrincipal.Controller;
 import Frames.PruebaVentanas;
+import Frames.VenOrdenEmpresa.OrdenClienteEmp;
 import Frames.vistaind.IndividualController;
 import Orden.*;
 import Producto.Producto;
@@ -16,16 +17,21 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import javax.xml.soap.Text;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class OrdenController {
+    public Label precio;
+    public ComboBox envio;
+    public TextField dias;
     private OrdenController controladorOrden;
     public Producto producto;
     public TextField cantidadProducto;
@@ -37,6 +43,13 @@ public class OrdenController {
     private Controller ventana;
     private Stage ordenController;
     private Cliente cliente;
+    private Orden ordens;
+
+    public void setEnvio() {
+        ObservableList<String> items = FXCollections.observableArrayList();
+        items.addAll("A domicilio", "A bodega");
+        this.envio.setItems(items);
+    }
 
     public void setStagePrincipal(Stage ventana) {
         this.ordenController = ventana;
@@ -82,6 +95,14 @@ public class OrdenController {
                     getIdProducto(this.cb_productotype.getValue().toString()));
             System.out.println(ic);
         }
+        if(this.cb_clientetype.getValue().toString().equals(TipoCliente.Empresarial.toString())){
+            System.out.println("si empresa");
+            //setCliente();
+            //IndividualController ic = new IndividualController();
+            //System.out.println("setCliente" + cliente.toString());
+            iraventanaEmpresa();
+        }
+
         //settear los valores de orden
         this.cantidadProducto.setText("");
         this.cb_clientetype.setValue(null);
@@ -136,21 +157,27 @@ public class OrdenController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(url));
             Parent root = loader.load();
             IndividualController controller = loader.getController();
-            setProducto(this.cb_productotype.getValue().toString());
-            controller.
-                    parametros(this.controladorOrden, this.producto,
-                            this.cantidadProducto.getCharacters().toString());
-
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.setScene(scene);
-            stage.setTitle(tittle);
-            stage.showAndWait();
+            if(this.cb_productotype.getValue().toString()!=null) {
+                setProducto(this.cb_productotype.getValue().toString());
+                controller.
+                        parametros(this.controladorOrden, this.producto,
+                                this.cantidadProducto.getCharacters().toString(),
+                                this.dias.getCharacters().toString(), this.envio.getValue().toString());
+                this.precio.setText("Q."+controller.getPrize());
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+                stage.initModality(Modality.APPLICATION_MODAL);
+                stage.setScene(scene);
+                stage.setTitle(tittle);
+                stage.showAndWait();
+            }
         }catch (IOException e){
 
         }
     }
+
+
+
     public void initialize(URL url, ResourceBundle rb){
         this.controladorOrden = this;
     }
@@ -159,13 +186,43 @@ public class OrdenController {
         DataSistema productos = new DataSistema();
         productos.listaProductos();
         for(Producto p : productos.getProducto()){
-            System.out.println(p.toString());
+            System.out.println(p.toString() + " es existente");
             if(p.getProducto().equalsIgnoreCase(prodtype)){//si encuentra este producto
                 this.producto = p;
             }
         }
     }
 
+    public void iraventanaEmpresa(){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../VenOrdenEmpresa/OrdenClienteEmp.fxml"));
+            Parent root = loader.load();
+            OrdenClienteEmp controller = loader.getController();
+            if (this.cb_productotype.getValue().toString() != null) {
+                setProducto(this.cb_productotype.getValue().toString());
+                controller.parametrosEmpresa(this.controladorOrden, this.producto,
+                            this.cantidadProducto.getCharacters().toString());
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+                stage.initModality(Modality.APPLICATION_MODAL);
+                stage.setScene(scene);
+                stage.setTitle("Entidad empresarial");
+                stage.showAndWait();
+            }
+        }catch (IOException e){
+
+        }
+    }
 
 
+    public void calcular(ActionEvent event) {
+        DataSistema db = new DataSistema();
+        db.listaProductos();
+        for(Producto p: db.getProducto()){
+            if(this.cb_productotype.getValue().toString().equalsIgnoreCase(p.getProducto())){
+                double precio = p.getPrecio()*Integer.parseInt(this.cantidadProducto.getCharacters().toString());
+                this.precio.setText("Q."+precio);
+            }
+        }
+    }
 }

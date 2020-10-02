@@ -21,7 +21,10 @@ public class IndividualController {
     private Producto producto;
     private String np;//n productos
     OrdenController stageOrden;
-
+    private String dias;
+    private String envio;
+    private String prize;
+    private Orden ordens;
     public void iniciar(ActionEvent event) {
         Individual cliente = new Individual();
         DataSistema db = new DataSistema();
@@ -34,7 +37,6 @@ public class IndividualController {
                     if(c.getIdCliente()==Integer.parseInt(this.id.getText())){
                         System.out.println("z");
                         if(((Individual) c).getDpi().equalsIgnoreCase(dpi.getText())){
-                            //this.cliente = c;
                             System.out.println("A");
                             //Hasta aquí tenemos un cliente individual
                             Date fecha = new Date();
@@ -56,11 +58,13 @@ public class IndividualController {
         }//fin for
     }
 
-    public void parametros (OrdenController vorden, Producto producto, String np){
+    public void parametros (OrdenController vorden, Producto producto, String np, String dias, String envio){
         this.producto = producto; System.out.println("Recibiendo " + producto.getProducto());
         this.np = np;
         System.out.println("Recibiendo " + np);
         this.stageOrden=vorden;
+        this.dias = dias;
+        this.envio = envio;
     }
 
     public void setCliente(String dpi, String id) {
@@ -81,10 +85,29 @@ public class IndividualController {
             Orden orden = new Orden(pcliente, this.cliente, this.np, this.producto);
             System.out.println(orden.toString());
             DataSistema db = new DataSistema();
+            double total = orden.getTotal(this.producto);
+            System.out.println(total);
+            if(this.envio.equalsIgnoreCase("A domicilio")) {
+                orden.setFormaDeEnvio(Integer.parseInt(this.dias), 1);
+                this.ordens = orden;
+                this.prize = total + "";
+            }else {
+                orden.setFormaDeEnvio(Integer.parseInt(this.dias), 2);
+                this.prize = total + "";
+                this.ordens = orden;
+            }
             db.orden.add(orden);
             System.out.println(db.getOrden().toString());
         }catch (NumberFormatException e){
             System.out.println(e);
         }
+    }
+
+    public Orden getOrdens() {
+        return ordens;
+    }
+
+    public String getPrize() {
+        return prize;
     }
 }
