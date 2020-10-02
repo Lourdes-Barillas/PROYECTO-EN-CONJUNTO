@@ -9,7 +9,7 @@ public class ItemOrden {
         cantidad=pCantidad;
     }
   
-    public double getTotalItem(){
+    public double getTotalItem(Producto producto){
         double total = 0.0;
         try {
             total = ((double) cantidad) * producto.getPrecio();

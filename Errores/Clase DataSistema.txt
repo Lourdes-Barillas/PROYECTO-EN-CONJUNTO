@@ -1,0 +1,24 @@
+package Orden;
+import Cliente.Cliente;
+import Producto.Producto;
+import java.util.ArrayList;
+
+/**
+ *
+ * @author deleo
+ */
+public class DataSistema {
+    //public static ArrayList<Cliente> cliente=new ArrayList (8);
+    public static ArrayList<Cliente> cliente = new ArrayList(8);
+    public static ArrayList<Orden> orden = new ArrayList(8);
+    public static ArrayList<Producto> producto = new ArrayList(8);
+    
+    public DataSistema(){/*
+        cliente=new ArrayList(8);
+        orden = new ArrayList(8);
+        producto=new ArrayList(8);    */
+    }
+    
+    
+   // public DataSistema(){}
+}

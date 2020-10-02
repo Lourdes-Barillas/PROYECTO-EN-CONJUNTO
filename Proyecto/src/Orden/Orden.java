@@ -3,6 +3,7 @@ import Cliente.*;
 
 import java.util.Date;
 import Frames.VenOrdenPrincipal.OrdenController;
+import Frames.vistaind.IndividualController;
 import Producto.Producto;
 
 import javax.xml.crypto.Data;
@@ -19,7 +20,7 @@ public class Orden {
     private int estado;
     private int diasEnvio;
     
-    public Orden(){
+    public void orden(){
     total =0.0;
     fechaOrden=new Date();
     this.id = sigIdOrden();
@@ -28,31 +29,47 @@ public class Orden {
     /**
      *
      * @param pCliente
-     * @param pfecha
      */
-    public Orden(int pCliente, Date pfecha, Cliente cliente){
-        this.cliente = cliente;
-        //verificar el cliente y buscarlo
-        OrdenController controller = new OrdenController();
-        this.cliente = controller.getCliente();
+    public Orden(int pCliente, Cliente cliente, String np, Producto producto){
+        System.out.println("llegando a orden");
         DataSistema db = new DataSistema();
         ItemOrden orden;
-        for(Cliente c : db.getCliente()){
+        this.cliente = cliente;
+        System.out.println("cliente puesto" + cliente.getIdCliente());
+        //verificar el cliente y buscarlo
+
+        System.out.println(cliente.toString());
+        db.listaClientes();
+        System.out.println("buscando cliente");
+        for(Cliente c : db.getCliente()){//recorriendo la lista de clientes en DataSistema
+            System.out.println("cliente" + c.toString());
             if(this.cliente.getIdCliente() == pCliente){
+                System.out.println("cliente obtenido");
                 try{
-                    int cantidad = Integer.parseInt(controller.getCantidadProducto());
-                    //buscar en DataSistema
+                    int cantidad = Integer.parseInt(np);//getcantidad del fxml
+                    System.out.println(cantidad);
                     Double precio = 0.0;//obtener el precio del producto
                     Double totalsd = 0.0, totalcd = 0.0;
                     //getprecio y gettotal
-                    for(Producto p : db.getProducto()){
-                        int nlinea = sigIdOrden();
-                        orden = new ItemOrden(nlinea, cantidad, p.idProducto());
-                        precio = p.getPrecio();
-                        totalsd = orden.getTotalItem();
-                        nlinea++;
-                        this.item1 = orden;
-                    }//fin for
+                    System.out.println("obteniendo producto");
+                    db.listaProductos();
+                        for(Producto p : db.getProducto()){//busco el producto en DataSistema
+                            System.out.println("Buscando producto de tipo " + producto.getProducto());
+                            if(p.getProducto().equalsIgnoreCase(producto.getProducto())) {//vemos el tipo de producto
+                                System.out.println("producto encontrado");
+                                int nlinea = sigIdOrden();
+                                orden = new ItemOrden(nlinea, cantidad, p.idProducto());
+                                precio = p.getPrecio();
+                                System.out.println("precio Q." + precio);
+                                totalsd = orden.getTotalItem(p);
+                                System.out.println(totalsd);
+                                System.out.println(orden.toString() + " orden");
+                                nlinea++;
+                                this.item1 = orden;
+                                System.out.println(item1);
+                            }
+                        }//fin for
+
                     if(this.cliente instanceof Empresa){
                         Double descuento = totalsd * 0.05;
                         totalcd = totalsd - descuento;
@@ -63,9 +80,11 @@ public class Orden {
                 }//fin catcht
             }//fin if
         }// fin for
-
-        new Orden(pfecha);
+        Date fecha = new Date();
+        orden(fecha, producto);
     }//fin constructor
+
+
 
 
     public double getTotal(){
@@ -103,14 +122,27 @@ public class Orden {
         }
     }
 
-    public Orden(Date pfecha){
-        new Orden();
+    public void orden(Date pfecha, Producto p){
+        orden();
         this.fechaOrden = pfecha;
-        this.total = this.precioEnvio + this.item1.getTotalItem();
+        this.total = this.precioEnvio + this.item1.getTotalItem(p);
         this.estado = 1;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+
+    @Override
+    public String toString() {
+        return "Orden{" +
+                "id=" + id +
+                ", cliente=" + cliente +
+                ", item1=" + item1 +
+                ", item2=" + item2 +
+                ", fechaOrden=" + fechaOrden +
+                ", precioEnvio=" + precioEnvio +
+                ", total=" + total +
+                ", tipoEnvio=" + tipoEnvio +
+                ", estado=" + estado +
+                ", diasEnvio=" + diasEnvio +
+                '}';
     }
 }

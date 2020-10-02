@@ -19,7 +19,7 @@ public class Cliente {
     }
 
     public String toString(){
-        return "";
+        return tipoCliente.toString();
     }
 
     public String getNombreClase(){
