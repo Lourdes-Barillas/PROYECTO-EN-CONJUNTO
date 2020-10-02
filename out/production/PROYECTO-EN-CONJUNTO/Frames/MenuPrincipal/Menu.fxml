@@ -8,28 +8,28 @@
 
 <AnchorPane prefHeight="309.0" prefWidth="323.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frames.MenuPrincipal.Controller">
    <children>
-      <Button layoutX="58.0" layoutY="145.0" mnemonicParsing="false" onAction="#ventanaOrden" prefHeight="31.0" prefWidth="208.0" style="-fx-background-color: #c2bcbc;" text="Asignar una orden" textFill="#171717">
+      <Button layoutX="58.0" layoutY="124.0" mnemonicParsing="false" onAction="#ventanaOrden" prefHeight="31.0" prefWidth="208.0" style="-fx-background-color: #40cf8a; -fx-background-radius: 15;" text="Asignar una orden" textFill="#171717">
          <font>
             <Font size="14.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button layoutX="58.0" layoutY="207.0" mnemonicParsing="false" onAction="#ventanaReporte" prefHeight="31.0" prefWidth="208.0" style="-fx-background-color: #c2bcbc;" text="Leer reportes" textFill="#171717">
+      <Button layoutX="58.0" layoutY="207.0" mnemonicParsing="false" onAction="#ventanaReporte" prefHeight="31.0" prefWidth="208.0" style="-fx-background-color: #36b6c2; -fx-background-radius: 15;" text="Leer reportes" textFill="#171717">
          <font>
             <Font size="14.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button layoutY="2.0" mnemonicParsing="false" onAction="#menu_Salir" prefHeight="35.0" prefWidth="25.0" style="-fx-background-color: #ffffff;" text="&lt;">
+      <Button layoutX="-5.0" layoutY="-6.0" mnemonicParsing="false" onAction="#menu_Salir" prefHeight="35.0" prefWidth="55.0" style="-fx-background-color: #ffffff;" text="&lt;">
          <font>
-            <Font name="Agency FB" size="41.0" />
+            <Font name="Consolas" size="33.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Label layoutX="90.0" layoutY="24.0" prefHeight="35.0" prefWidth="157.0" text="¡Bienvenido!" textFill="#140672">
+      <Label layoutX="92.0" layoutY="7.0" prefHeight="35.0" prefWidth="157.0" text="¡Bienvenido!" textFill="#140672">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
