@@ -145,4 +145,16 @@ public class Orden {
                 ", diasEnvio=" + diasEnvio +
                 '}';
     }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public ItemOrden getItem1() {
+        return item1;
+    }
+
+    public Producto getProducto() {
+        return item1.getProducto();
+    }
 }
