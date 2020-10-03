@@ -43,7 +43,7 @@ public class Orden {
         db.listaClientes();
         System.out.println("buscando cliente");
         for(Cliente c : db.getCliente()){//recorriendo la lista de clientes en DataSistema
-            System.out.println("cliente" + c.toString());
+            System.out.println("cliente " + c.toString());
             if(this.cliente.getIdCliente() == pCliente){
                 System.out.println("cliente obtenido");
                 try{
@@ -83,6 +83,7 @@ public class Orden {
         }// fin for
         Date fecha = new Date();
         orden(fecha, producto);
+        System.out.println("orden terminada");
     }//fin constructor
 
     public double getTotal(Producto producto){
