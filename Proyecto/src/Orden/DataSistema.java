@@ -70,4 +70,11 @@ public class DataSistema {
     public Cliente devolverCliente(int b){return this.cliente.get(b);}
     public Orden devolverOrden(int c){return this.orden.get(c);}
 
+
+    public void listaOden(){
+        listaProductos();
+        listaClientes();
+        this.orden.add(new Orden(1, getCliente().get(1), getProducto().get(1).getIdProducto() +"", getProducto().get(1)));
+    }
+
 }
