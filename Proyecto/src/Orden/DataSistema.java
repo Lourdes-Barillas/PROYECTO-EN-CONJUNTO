@@ -75,6 +75,27 @@ public class DataSistema {
         listaProductos();
         listaClientes();
         this.orden.add(new Orden(1, getCliente().get(1), getProducto().get(1).getIdProducto() +"", getProducto().get(1)));
+        getOrden().get(0).setFormaDeEnvio(5, 2);
+
+        this.orden.add(new Orden(2, getCliente().get(1), getProducto().get(2).getIdProducto() +"", getProducto().get(2)));
+        getOrden().get(1).setFormaDeEnvio(3, 1);
+
+        this.orden.add(new Orden(3, getCliente().get(1), getProducto().get(3).getIdProducto() +"", getProducto().get(3)));
+        getOrden().get(2).setFormaDeEnvio(6, 2);
+
+        this.orden.add(new Orden(4, getCliente().get(1), getProducto().get(4).getIdProducto() +"", getProducto().get(4)));
+        getOrden().get(3).setFormaDeEnvio(2, 2);
+
+        this.orden.add(new Orden(5, getCliente().get(1), getProducto().get(7).getIdProducto() +"", getProducto().get(7)));
+        getOrden().get(4).setFormaDeEnvio(4, 1);
+
+        this.orden.add(new Orden(6, getCliente().get(1), getProducto().get(2).getIdProducto() +"", getProducto().get(2)));
+        getOrden().get(5).setFormaDeEnvio(5, 1);
+
+        this.orden.add(new Orden(7, getCliente().get(1), getProducto().get(1).getIdProducto() +"", getProducto().get(1)));
+        getOrden().get(6).setFormaDeEnvio(6, 2);
+
+        getOrden().get(7).setFormaDeEnvio(5, 1);
     }
 
 }
