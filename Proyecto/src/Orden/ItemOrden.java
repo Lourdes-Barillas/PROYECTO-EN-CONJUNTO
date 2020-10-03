@@ -25,7 +25,6 @@ public class ItemOrden {
 
     @Override
     public String toString(){
-
         return "";
     }
     
