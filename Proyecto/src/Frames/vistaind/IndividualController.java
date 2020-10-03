@@ -102,7 +102,9 @@ public class IndividualController {
             if( this.envio.equalsIgnoreCase(null)){
                 JOptionPane.showMessageDialog(null, "Escoja una forma de envío");
             }
-            db.orden.add(orden);
+            //**************
+             db.setOrden(orden);
+           //db.orden.add(orden);
             System.out.println(db.getOrden().toString());
         }catch (NumberFormatException e){
             JOptionPane.showMessageDialog(null, "Error de numeros escritos en los campos");
