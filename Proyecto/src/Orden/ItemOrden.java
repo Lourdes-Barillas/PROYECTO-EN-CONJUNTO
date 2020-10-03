@@ -19,6 +19,10 @@ public class ItemOrden {
         return total;
     }
 
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
+
     public Producto getProducto() {
         return producto;
     }

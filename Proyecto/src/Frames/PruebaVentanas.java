@@ -43,9 +43,6 @@ public class PruebaVentanas extends Application {
 
 
     public static void main(String[] args) {
-        DataSistema db = new DataSistema();
-        db.listaOden();
-        System.out.println(db.getOrden().get(3).toString());
         launch(args);
     }
 

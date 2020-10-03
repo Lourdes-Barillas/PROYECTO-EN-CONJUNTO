@@ -67,6 +67,7 @@ public class Orden {
                                 System.out.println(orden.toString() + " orden");
                                 nlinea++;
                                 this.item1 = orden;
+                                this.item1.setProducto(p);
                                 System.out.println(item1);
                             }
                         }//fin for
