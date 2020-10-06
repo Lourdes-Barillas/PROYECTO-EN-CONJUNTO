@@ -75,39 +75,47 @@ public class MadeOrden {
     public String[] getData(){
         File file = new File("orden.txt");
         String orden[] = new String[7];
+        String line;
+       // int i=0;
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
             for(int i= 0; i<file.length();i++){
-
-                switch (i){
-                    case 0:
+            //while((line= br.readLine())!=null) {
+                switch (i) {
+                    case 0://id
                         this.ido = (br.readLine());
                         break;
-                    case 1:
+                    case 1://tipo cliente
                         this.te = (br.readLine());
                         break;
                     case 2://dpi o contacto
                         this.dpi = br.readLine();
+                        System.out.println(dpi+" dpi");
                         this.contacto = br.readLine();
+                        System.out.println(contacto+" dpi");
                         break;
                     case 3://fecha
                         this.date = br.readLine();
+
                         break;
                     case 4://precio
                         this.ptotal = br.readLine();
                         break;
                     case 5://tipo de envio
-                        this.tde=(br.readLine());
+                        this.tde = (br.readLine());
+                        //System.out.println("hola"+tde);
                         break;
                     case 6://dias de envio
                         this.d = (br.readLine());
                         break;
                 }
                 //[id, tipo de envio, dpi, contacto, date, ptotal, tip de envio, dias]
-                orden = new String[]{this.ido + "", this.te + "", ""+this.dpi,
-                        ""+this.contacto, ""+this.date, ""+this.ptotal, ""+this.tde, ""+this.d};
-                br.close();
+                orden = new String[]{this.ido + "", this.te + "", "" + this.dpi,
+                        "" + this.contacto, "" + this.date, "" + this.ptotal, "" + this.tde, "" + this.d};
+              //  i++;
             }
+            br.close();
+            //}
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
