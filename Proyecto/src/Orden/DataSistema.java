@@ -80,7 +80,7 @@ public class DataSistema {
         this.orden.add(new Orden(1, db.getCliente().get(0), db.getProducto().get(1).getIdProducto() +"", db.getProducto().get(0)));
 
         System.out.println("\n\n\n\n\nfin data");
-        this.orden.add(new Orden(2, db.getCliente().get(1), db.getProducto().get(2).getIdProducto() +"", db.getProducto().get(1)));
+       /* this.orden.add(new Orden(2, db.getCliente().get(1), db.getProducto().get(2).getIdProducto() +"", db.getProducto().get(1)));
 
         System.out.println("fin data");
         this.orden.add(new Orden(3, db.getCliente().get(2), db.getProducto().get(3).getIdProducto() +"", db.getProducto().get(2)));
@@ -96,7 +96,7 @@ public class DataSistema {
 
         System.out.println("fin data");
         this.orden.add(new Orden(3, db.getCliente().get(2), db.getProducto().get(3).getIdProducto() +"", db.getProducto().get(2)));
-
+         */
         System.out.println("fin data");
     }
 

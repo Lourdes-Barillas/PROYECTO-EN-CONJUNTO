@@ -23,6 +23,7 @@ public class MadeOrden {
     private String te;
     private int diasEnvio;
     private String d;
+    private String nomProducto;
 
     public void addData(Orden orden, String contacto){
         Cliente c = orden.getCliente();
@@ -33,13 +34,15 @@ public class MadeOrden {
             this.dpi = ((Individual) c).getDpi();
         }
         this.contacto = contacto;
-        System.out.println("The type has geted");
+        System.out.println("The type has geted as " + this.contacto);
 
         this.item = orden.getItem1();
         this.fecha = orden.getFechaOrden();
         this.total = orden.getTotal(orden.getProducto());
         this.tipoDeEnvio = orden.getTipoEnvio();
         this.diasEnvio = orden.getDiasEnvio();
+        this.nomProducto = orden.getProducto().getProducto();
+        System.out.println("What has been geted"+orden.toString());
         System.out.println("Everything has been geted");
     }//end addData
 
@@ -50,22 +53,23 @@ public class MadeOrden {
         try {
             BufferedWriter bf = new BufferedWriter(new FileWriter(file));
             bf.write(this.id_Orden + "");bf.newLine();
-            if(orden.getCliente().getTipoCliente()==TipoCliente.Persona){
-                bf.write("Persona");bf.newLine();
+            if(orden.getTc()==TipoCliente.Persona){
+                bf.write("Individual");
             }else
                 bf.write(TipoCliente.Empresarial.toString());bf.newLine();
 
             System.out.println("Writting the type");
-            if(orden.getCliente().getTipoCliente()==TipoCliente.Persona){
+            /*if(orden.getCliente().getTipoCliente()==TipoCliente.Persona){
                 bf.write(this.dpi);
             }else
-                bf.write(this.contacto);
+                bf.write(this.contacto);*/
 
-            bf.write(this.item.toString());bf.newLine();
+            bf.write(this.contacto);bf.newLine();
             bf.write(this.fecha.toString());bf.newLine();
             bf.write(this.total+"");bf.newLine();
             bf.write(this.tipoDeEnvio+"");bf.newLine();
             bf.write(this.diasEnvio+ "");bf.newLine();
+            bf.write(this.nomProducto + "");
             bf.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -74,46 +78,97 @@ public class MadeOrden {
 
     public String[] getData(){
         File file = new File("orden.txt");
-        String orden[] = new String[7];
+<<<<<<< HEAD
+        String orden[] = new String[8];
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
-            for(int i= 0; i<file.length();i++){
+            String line;
+            int i=0;
+            while( (line=br.readLine()) !=null){
 
                 switch (i){
                     case 0:
-                        this.ido = (br.readLine());
+                        this.ido = (line);
+                        orden[0] = line;
                         break;
                     case 1:
+                        this.te = (line);
+                        orden[1] = line;
+                        break;
+                    case 2://dpi o contacto
+                        this.dpi = line;
+                        this.contacto = dpi;
+                        orden[2] = line;;
+                        break;
+                    case 3://fecha
+                        this.date = line;
+                        orden[3] = line;
+=======
+        String orden[] = new String[7];
+        String line;
+       // int i=0;
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            for(int i= 0; i<file.length();i++){
+            //while((line= br.readLine())!=null) {
+                switch (i) {
+                    case 0://id
+                        this.ido = (br.readLine());
+                        break;
+                    case 1://tipo cliente
                         this.te = (br.readLine());
                         break;
                     case 2://dpi o contacto
                         this.dpi = br.readLine();
+                        System.out.println(dpi+" dpi");
                         this.contacto = br.readLine();
+                        System.out.println(contacto+" dpi");
                         break;
                     case 3://fecha
                         this.date = br.readLine();
+
+>>>>>>> 22ceabd12f13e21d473f1f88362ac4a71cf77dde
                         break;
                     case 4://precio
-                        this.ptotal = br.readLine();
+                        this.ptotal = line;
+                        orden[4] = line;
                         break;
                     case 5://tipo de envio
-                        this.tde=(br.readLine());
+<<<<<<< HEAD
+                        this.tde=(line);
+                        orden[5] = line;
+=======
+                        this.tde = (br.readLine());
+                        //System.out.println("hola"+tde);
+>>>>>>> 22ceabd12f13e21d473f1f88362ac4a71cf77dde
                         break;
                     case 6://dias de envio
-                        this.d = (br.readLine());
+                        this.d = (line);
+                        orden[6] = line;
+                        break;
+                    case 7:
+                        this.nomProducto = (line);
+                        orden[7] = line;
                         break;
                 }
+                i++;
                 //[id, tipo de envio, dpi, contacto, date, ptotal, tip de envio, dias]
-                orden = new String[]{this.ido + "", this.te + "", ""+this.dpi,
-                        ""+this.contacto, ""+this.date, ""+this.ptotal, ""+this.tde, ""+this.d};
-                br.close();
+<<<<<<< HEAD
             }
+            br.close();
+=======
+                orden = new String[]{this.ido + "", this.te + "", "" + this.dpi,
+                        "" + this.contacto, "" + this.date, "" + this.ptotal, "" + this.tde, "" + this.d};
+              //  i++;
+            }
+            br.close();
+            //}
+>>>>>>> 22ceabd12f13e21d473f1f88362ac4a71cf77dde
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(orden[0] + orden[1] + orden[2] + orden[3] + orden[4] + orden[5] + orden[6]);
         return orden;
     }
 

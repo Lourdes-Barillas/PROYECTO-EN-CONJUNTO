@@ -20,7 +20,7 @@ public class Orden {
     private int tipoEnvio;
     private int estado;
     private int diasEnvio;
-    
+    private String nombreP;
     public void orden(){
     total =0.0;
     fechaOrden=new Date();
@@ -48,6 +48,7 @@ public class Orden {
             System.out.println("cliente " + c.toString());
             if(this.cliente.getIdCliente() == pCliente){
                 System.out.println("cliente obtenido");
+                //this.tc = this.cliente.getTipoCliente();
                 try{
                     int cantidad = Integer.parseInt(np);//getcantidad del fxml
                     System.out.println(cantidad);
@@ -60,6 +61,7 @@ public class Orden {
                             System.out.println("Buscando producto de tipo " + producto.getProducto());
                             if(p.getProducto().equalsIgnoreCase(producto.getProducto())) {//vemos el tipo de producto
                                 System.out.println("producto encontrado");
+                                this.nombreP = p.getProducto();
                                 int nlinea = sigIdOrden();
                                 orden = new ItemOrden(nlinea, cantidad, p.idProducto());
                                 precio = p.getPrecio();
@@ -139,12 +141,14 @@ public class Orden {
                 "id=" + id +
                 ", cliente=" + cliente +
                 ", item1=" + item1 +
+                ", tc=" + tc +
                 ", fechaOrden=" + fechaOrden +
                 ", precioEnvio=" + precioEnvio +
                 ", total=" + total +
                 ", tipoEnvio=" + tipoEnvio +
                 ", estado=" + estado +
                 ", diasEnvio=" + diasEnvio +
+                ", nombreP='" + nombreP + '\'' +
                 '}';
     }
 
@@ -170,4 +174,6 @@ public class Orden {
     public TipoCliente getTc(){ return this.tc;}
 
     public Date getFechaOrden() { return fechaOrden; }
+
+    public String getNombreP() { return nombreP; }
 }

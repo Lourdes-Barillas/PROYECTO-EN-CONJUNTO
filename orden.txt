@@ -1,7 +1,17 @@
 8
+<<<<<<< HEAD
+Individual
+3045269871452
+Tue Oct 06 12:00:20 CST 2020
+1001.8
+1
+2
+Batería
+=======
 Empresarial
-bbzumeta@gmail.com
-Mon Oct 05 18:16:47 CST 2020
-101.8
+marcela53@yahoo.com
+Tue Oct 06 01:48:26 CST 2020
+61.8
 0
 0
+>>>>>>> 22ceabd12f13e21d473f1f88362ac4a71cf77dde
