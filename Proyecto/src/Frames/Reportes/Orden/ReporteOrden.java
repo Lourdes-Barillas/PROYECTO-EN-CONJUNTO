@@ -117,8 +117,6 @@ public class ReporteOrden implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        MadeOrden mo = new MadeOrden();
-        mo.getData();
         verDatos();
     }
 
