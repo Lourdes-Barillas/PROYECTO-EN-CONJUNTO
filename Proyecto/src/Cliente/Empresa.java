@@ -32,7 +32,9 @@ public class Empresa extends Cliente{
 
     public Empresa(){
 
+
     }
+
 
     public  Empresa(Cliente cliente){
         this.id = cliente.getIdCliente();

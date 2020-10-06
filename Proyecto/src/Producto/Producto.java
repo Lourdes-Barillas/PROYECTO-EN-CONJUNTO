@@ -1,10 +1,12 @@
 package Producto;
 
+
 public class Producto {
     private int idProducto;//inicializará con el valor de 200
     private String producto;
     private String marca;
     private Double precio;
+
 
     public Producto(){
       //se inicializa el sigId aquí

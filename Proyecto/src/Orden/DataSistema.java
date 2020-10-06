@@ -47,14 +47,14 @@ public class DataSistema {
      */
     public void listaProductos(){
         //el precio de cada producto es por cada unidad
-        this.producto.add(new Producto(1, "Llanta", "Firestone", 20.90));//1
-        this.producto.add(new Producto(2, "Aro", "Luigi", 30.90));//2
-        this.producto.add(new Producto(3, "Batería", "Dolar Industria", 500.90));//3
-        this.producto.add(new Producto(4, "Espejo", "Boutique del Automovil", 50.90));//4
-        this.producto.add(new Producto(5, "Vela", "Dicas", 50.90));//5
-        this.producto.add(new Producto(6, "Radiador", "Vento", 120.90));//6
-        this.producto.add(new Producto(7, "Linterna delantera", "KIA", 75.90));//7
-        this.producto.add(new Producto(8, "Linterna trasera", "KIA", 80.90));//8
+        this.producto.add(new Producto(201, "Llanta", "Firestone", 20.90));//1
+        this.producto.add(new Producto(202, "Aro", "Luigi", 30.90));//2
+        this.producto.add(new Producto(203, "Batería", "Dolar Industria", 500.90));//3
+        this.producto.add(new Producto(204, "Espejo", "Boutique del Automovil", 50.90));//4
+        this.producto.add(new Producto(205, "Vela", "Dicas", 50.90));//5
+        this.producto.add(new Producto(206, "Radiador", "Vento", 120.90));//6
+        this.producto.add(new Producto(207, "Linterna delantera", "KIA", 75.90));//7
+        this.producto.add(new Producto(208, "Linterna trasera", "KIA", 80.90));//8
     }
     public ArrayList<Producto> getProducto() {
         return producto;

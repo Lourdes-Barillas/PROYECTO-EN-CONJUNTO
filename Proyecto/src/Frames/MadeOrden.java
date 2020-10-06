@@ -123,7 +123,7 @@ public class MadeOrden {
                 i++;
                 //[id, tipo de envio, dpi, contacto, date, ptotal, tip de envio, dias]
                 orden = new String[]{this.ido + "", this.te + "", "" + this.dpi,
-                        "" + this.contacto, "" + this.date, "" + this.ptotal, "" + this.tde, "" + this.d};
+                        "" + this.contacto, "" + this.date, "" + this.ptotal, "" + this.tde, "" + this.nomProducto};
               //  i++;
             }
             br.close();

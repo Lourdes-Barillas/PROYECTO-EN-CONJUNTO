@@ -129,7 +129,8 @@ public class ReporteOrden implements Initializable {
     }
 
     public void ButtonBus(ActionEvent event) {
-        String [] s= new String [7];
+        delA();
+        String [] s= new String [8];
         MadeOrden mo = new MadeOrden();
         s= mo.getData();
         String ids= idBuscar.getText();
@@ -137,12 +138,21 @@ public class ReporteOrden implements Initializable {
             id1.setText(" "+s[0]);//id
             cl1.setText(" "+s[1]);//tipocliente
             d1.setText(" "+s[2]);//dpi o contacto
-
-            en1.setText(" "+ s[3]);//fecha
-            to1.setText(" "+s[4]);//total
+            po1.setText(" "+s[7]);//producto
+            en1.setText(" "+ s[4]);//fecha
+            to1.setText(" "+s[5]);//total
 
         }else{
             JOptionPane.showMessageDialog(null,"no se encontraron coincidencias, \nintente con otro identificador");
         }
     }
+    public void delA(){
+        id1.setText("");
+        cl1.setText("");
+        d1.setText("");
+       // po1.setText("");
+        en1.setText("");
+        to1.setText("");
+
+    };
 }//class
