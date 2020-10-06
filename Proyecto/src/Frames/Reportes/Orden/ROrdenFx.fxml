@@ -18,12 +18,6 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="502.0" layoutY="12.0" mnemonicParsing="false" onAction="#ButtonBus" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #403e3e;" text="Buscar" textFill="WHITE" underline="true">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Button>
-            <TextField fx:id="idBuscar" layoutX="344.0" layoutY="15.0" />
          </children>
       </Pane>
       <GridPane gridLinesVisible="true" layoutX="8.0" layoutY="107.0" prefHeight="267.0" prefWidth="614.0">
@@ -51,7 +45,7 @@
             <Label text=" Cliente" GridPane.columnIndex="1" />
             <Label text=" DPI o contacto" GridPane.columnIndex="2" />
             <Label text=" Producto" GridPane.columnIndex="3" />
-            <Label text=" Fecha de pedido" GridPane.columnIndex="4" />
+            <Label text=" Dias de entrega" GridPane.columnIndex="4" />
             <Label text=" Total" GridPane.columnIndex="5" />
             <Label fx:id="id1" GridPane.rowIndex="1" />
             <Label fx:id="cl1" GridPane.columnIndex="1" GridPane.rowIndex="1" />

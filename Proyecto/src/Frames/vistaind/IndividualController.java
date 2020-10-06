@@ -107,7 +107,7 @@ public class IndividualController {
             System.out.println("Let's charge our client");
             db.setOrden(orden);
             MadeOrden mo = new MadeOrden();
-            mo.addToArchive(orden, this.dpi.getCharacters().toString());
+            mo.addToArchive(orden,"");
         }catch (NumberFormatException e){
             JOptionPane.showMessageDialog(null, "Error de numeros escritos en los campos");
         }
