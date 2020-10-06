@@ -125,7 +125,7 @@ public class ReporteOrden implements Initializable {
        // MadeOrden mo = new MadeOrden();
         //mo.getData();
         //searchRep();
-        //verDatos();
+        verDatos();
     }
 
     public void ButtonBus(ActionEvent event) {

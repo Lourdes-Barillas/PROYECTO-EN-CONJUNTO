@@ -27,7 +27,7 @@ public class MadeOrden {
 
     public void addData(Orden orden, String contacto){
         Cliente c = orden.getCliente();
-        this.id_Orden = 8;
+        this.id_Orden = 1;
         this.cliente = orden.getTc().toString();
         System.out.println("Let's get the type");
         if(c.getTipoCliente() ==TipoCliente.Persona){
