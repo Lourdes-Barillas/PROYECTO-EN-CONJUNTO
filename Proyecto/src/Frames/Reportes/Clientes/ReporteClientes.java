@@ -42,7 +42,6 @@ public class ReporteClientes {
 
     public void devolverClientesAll() {
         try2("ambos");
-       // try2(2);
     }//devolverclienteAll
 
     public void devolverClienesEmp(){
@@ -53,6 +52,7 @@ public class ReporteClientes {
     }
 
     public void try2(String am){
+        resetT();
         int a = 0, b = -1;
         String ids;
         Individual ind= new Individual();
@@ -132,6 +132,16 @@ public class ReporteClientes {
             a++;
 
         }
+    }
+    public void resetT(){
+        dato1.setText("  "); id1.setText("  ");
+        dato2.setText("  "); id2.setText("  ");
+        dato3.setText("  "); id3.setText("  ");
+        dato4.setText("  "); id4.setText("  ");
+        dato5.setText("  "); id5.setText("  ");
+        dato6.setText("  "); id6.setText("  ");
+        dato7.setText("  "); id7.setText("  ");
+        dato8.setText("  "); id8.setText("  ");
     }
 
 }//class

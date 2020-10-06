@@ -3,6 +3,7 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frames.Reportes.Productos.ReporteProductos">
@@ -88,5 +89,6 @@
             <Label fx:id="precio8" GridPane.columnIndex="3" GridPane.rowIndex="8" />
          </children>
       </GridPane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0677e170" height="30.0" layoutX="28.0" layoutY="78.0" stroke="#b8535300" strokeType="INSIDE" width="543.0" />
    </children>
 </AnchorPane>
