@@ -78,7 +78,6 @@ public class MadeOrden {
 
     public String[] getData(){
         File file = new File("orden.txt");
-<<<<<<< HEAD
         String orden[] = new String[8];
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
@@ -103,44 +102,14 @@ public class MadeOrden {
                     case 3://fecha
                         this.date = line;
                         orden[3] = line;
-=======
-        String orden[] = new String[7];
-        String line;
-       // int i=0;
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(file));
-            for(int i= 0; i<file.length();i++){
-            //while((line= br.readLine())!=null) {
-                switch (i) {
-                    case 0://id
-                        this.ido = (br.readLine());
-                        break;
-                    case 1://tipo cliente
-                        this.te = (br.readLine());
-                        break;
-                    case 2://dpi o contacto
-                        this.dpi = br.readLine();
-                        System.out.println(dpi+" dpi");
-                        this.contacto = br.readLine();
-                        System.out.println(contacto+" dpi");
-                        break;
-                    case 3://fecha
-                        this.date = br.readLine();
-
->>>>>>> 22ceabd12f13e21d473f1f88362ac4a71cf77dde
                         break;
                     case 4://precio
                         this.ptotal = line;
                         orden[4] = line;
                         break;
                     case 5://tipo de envio
-<<<<<<< HEAD
                         this.tde=(line);
                         orden[5] = line;
-=======
-                        this.tde = (br.readLine());
-                        //System.out.println("hola"+tde);
->>>>>>> 22ceabd12f13e21d473f1f88362ac4a71cf77dde
                         break;
                     case 6://dias de envio
                         this.d = (line);
@@ -153,17 +122,12 @@ public class MadeOrden {
                 }
                 i++;
                 //[id, tipo de envio, dpi, contacto, date, ptotal, tip de envio, dias]
-<<<<<<< HEAD
-            }
-            br.close();
-=======
                 orden = new String[]{this.ido + "", this.te + "", "" + this.dpi,
                         "" + this.contacto, "" + this.date, "" + this.ptotal, "" + this.tde, "" + this.d};
               //  i++;
             }
             br.close();
             //}
->>>>>>> 22ceabd12f13e21d473f1f88362ac4a71cf77dde
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
