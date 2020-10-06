@@ -26,7 +26,11 @@ public class Cliente {
         String clase = this.tipoCliente.toString();
         return clase;
     }
+    public TipoCliente getTipoCliente(){
+        return this.tipoCliente;
+    }
 
-
-
+    public void setTipoCliente(TipoCliente tipoCliente) {
+        this.tipoCliente = tipoCliente;
+    }
 }

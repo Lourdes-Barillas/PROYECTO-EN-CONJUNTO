@@ -13,7 +13,7 @@ public class Orden {
     private int id;
     private Cliente cliente;
     private ItemOrden item1;
-    private ItemOrden item2;
+    private TipoCliente tc;
     private Date fechaOrden;
     private double precioEnvio;
     private double total;
@@ -37,7 +37,9 @@ public class Orden {
         ItemOrden orden;
         this.cliente = cliente;
         System.out.println("cliente puesto" + cliente.getIdCliente());
-        //verificar el cliente y buscarlo
+
+        //obtengamos el tipo de cliente
+        this.tc = (cliente.getTipoCliente()==TipoCliente.Empresarial)?TipoCliente.Empresarial:TipoCliente.Persona;
 
         System.out.println(cliente.toString());
         db.listaClientes();
@@ -137,7 +139,6 @@ public class Orden {
                 "id=" + id +
                 ", cliente=" + cliente +
                 ", item1=" + item1 +
-                ", item2=" + item2 +
                 ", fechaOrden=" + fechaOrden +
                 ", precioEnvio=" + precioEnvio +
                 ", total=" + total +
@@ -146,6 +147,12 @@ public class Orden {
                 ", diasEnvio=" + diasEnvio +
                 '}';
     }
+
+
+
+    public int getDiasEnvio() { return diasEnvio; }
+
+    public int getTipoEnvio() { return tipoEnvio; }
 
     public Cliente getCliente() {
         return cliente;
@@ -158,4 +165,9 @@ public class Orden {
     public Producto getProducto() {
         return item1.getProducto();
     }
+
+    public int getId() { return id; }
+    public TipoCliente getTc(){ return this.tc;}
+
+    public Date getFechaOrden() { return fechaOrden; }
 }

@@ -1,6 +1,7 @@
 package Frames.Reportes.Orden;
 
 import Cliente.Cliente;
+import Frames.MadeOrden;
 import Frames.PruebaVentanas;
 import Frames.Reportes.Reportes;
 import Orden.Orden;
@@ -21,6 +22,7 @@ public class ReporteOrden implements Initializable {
     Producto p;
     Cliente c;
     Orden o;
+    Orden oEscrita;
     public Label id1;public Label cl1;public Label d1;public Label po1;public Label en1;public Label to1;
     public Label id2;public Label cl2;public Label d2;public Label po2;public Label en2;public Label to2;
     public Label id3;public Label cl3;public Label d3;public Label po3;public Label en3;public Label to3;
@@ -115,6 +117,11 @@ public class ReporteOrden implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        MadeOrden mo = new MadeOrden();
+        mo.getData();
         verDatos();
     }
+
+
+
 }//class

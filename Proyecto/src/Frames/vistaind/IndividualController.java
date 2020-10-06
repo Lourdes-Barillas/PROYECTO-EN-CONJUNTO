@@ -1,6 +1,8 @@
 package Frames.vistaind;
 
 import Cliente.*;
+import Frames.MadeOrden;
+import Frames.Reportes.Orden.ReporteOrden;
 import Frames.VenOrdenPrincipal.OrdenController;
 import Orden.*;
 import Producto.Producto;
@@ -26,6 +28,7 @@ public class IndividualController {
     private String envio;
     private String prize;
     private Orden ordens;
+
     public void iniciar(ActionEvent event) {
         Individual cliente = new Individual();
         DataSistema db = new DataSistema();
@@ -44,9 +47,8 @@ public class IndividualController {
                             System.out.println(this.dpi.getCharacters());
                             setCliente(this.dpi.getCharacters().toString(), this.id.getCharacters().toString());
                             System.out.println(this.cliente.toString());
-
-
                             setOrden();
+                            System.out.println(getOrdens().toString());
                             Node souce = (Node) event.getSource();
                             Stage g = (Stage) souce.getScene().getWindow();
                             g.close();
@@ -102,10 +104,10 @@ public class IndividualController {
             if( this.envio.equalsIgnoreCase(null)){
                 JOptionPane.showMessageDialog(null, "Escoja una forma de envío");
             }
-            //**************
-             db.setOrden(orden);
-           //db.orden.add(orden);
-            System.out.println(db.getOrden().toString());
+            System.out.println("Let's charge our client");
+            db.setOrden(orden);
+            MadeOrden mo = new MadeOrden();
+            mo.addToArchive(orden,"");
         }catch (NumberFormatException e){
             JOptionPane.showMessageDialog(null, "Error de numeros escritos en los campos");
         }

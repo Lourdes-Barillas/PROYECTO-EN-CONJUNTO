@@ -1,11 +1,14 @@
 package Frames.Reportes;
 
+import Cliente.Individual;
 import Frames.PruebaVentanas;
 import Frames.Reportes.Clientes.ReporteClientes;
 import Frames.Reportes.Clientes.ReporteClientes;
 import Frames.Reportes.Orden.ReporteOrden;
 import Frames.Reportes.Productos.ReporteProductos;
 import Frames.VenOrdenPrincipal.OrdenController;
+import Frames.vistaind.IndividualController;
+import Orden.Orden;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -20,6 +23,7 @@ public class Reportes {
     private PruebaVentanas main;
     private Reportes re;
     private Stage ordenController;
+    Orden oEscrita;
     public void setStagePrincipal(Stage ventana) {
         this.ordenController = ventana;
     }
@@ -33,6 +37,7 @@ public class Reportes {
         try {
             FXMLLoader loader = new FXMLLoader(PruebaVentanas.class.getResource("Reportes/Orden/ROrdenFx.fxml"));
             AnchorPane ReporteOrden = (AnchorPane) loader.load();
+
             Stage orden = new Stage();
             orden.setTitle("Reporte de Orden");
             orden.initOwner(ordenController);

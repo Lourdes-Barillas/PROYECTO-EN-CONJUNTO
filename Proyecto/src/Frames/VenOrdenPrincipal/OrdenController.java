@@ -45,6 +45,8 @@ public class OrdenController {
     private Stage ordenController;
     private Cliente cliente;
     private Orden ordens;
+    private Orden oEscrita;
+    private IndividualController ic;
 
     public void setEnvio() {
         ObservableList<String> items = FXCollections.observableArrayList();
@@ -81,12 +83,12 @@ public class OrdenController {
         nuevaVentana.start(ordenController);
     }
 
-    public void Ordenar(ActionEvent event) throws IOException{
+    public void Ordenar(ActionEvent event) throws IOException {
         Orden orden;
         nuevaVentana = new PruebaVentanas();
         System.out.println("cantidad" + cantidadProducto.getCharacters());
         //mostrar ventana de cliente individual o de empresa
-        if(this.cb_clientetype.getValue().toString().equals(TipoCliente.Persona.toString())){
+        if (this.cb_clientetype.getValue().toString().equals(TipoCliente.Persona.toString())) {
             System.out.println("si");
             setCliente();
             IndividualController ic = new IndividualController();
@@ -96,7 +98,7 @@ public class OrdenController {
                     getIdProducto(this.cb_productotype.getValue().toString()));
             System.out.println(ic);
         }
-        if(this.cb_clientetype.getValue().toString().equals(TipoCliente.Empresarial.toString())){
+        if (this.cb_clientetype.getValue().toString().equals(TipoCliente.Empresarial.toString())) {
             System.out.println("si empresa");
             //setCliente();
             //IndividualController ic = new IndividualController();
@@ -171,6 +173,7 @@ public class OrdenController {
                 stage.setScene(scene);
                 stage.setTitle(tittle);
                 stage.showAndWait();
+                //System.out.println("Se recibió la " + this.oEscrita.toString());
             }
         }catch (IOException e){
             JOptionPane.showMessageDialog(null, "Ha ocurrido un error: " + e.toString());
@@ -225,5 +228,17 @@ public class OrdenController {
                 this.precio.setText("Q."+precio);
             }
         }
+    }
+
+    /**
+     * parametros establecidos para recibir la orden y el stage
+     * Al recibir la variable vordeni, esta será establecida como un objeto en esta clase
+     * @param vordeni
+     * @param orden
+     */
+    public void parametros (IndividualController vordeni, Orden orden){
+        this.ic = vordeni;
+        this.oEscrita = orden;
+        System.out.println("Recibiendo orden" +  this.oEscrita);
     }
 }

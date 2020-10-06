@@ -1,6 +1,7 @@
 package Frames.VenOrdenEmpresa;
 
 import Cliente.*;
+import Frames.MadeOrden;
 import Frames.VenOrdenPrincipal.OrdenController;
 import Orden.DataSistema;
 import Orden.Orden;
@@ -71,16 +72,19 @@ public class OrdenClienteEmp {
     }
 
     public void setOrden(){
+        Orden orden = null;
         System.out.println("Entrando a orden");
         System.out.println(this.producto.getProducto() + " " + this.np);
         try{
             int pcliente = Integer.parseInt(this.id.getCharacters().toString());
             setCliente(this.contacto.getCharacters().toString(), this.id.getCharacters().toString());
             System.out.println("Tipo de producto: " + this.producto.getProducto());
-            Orden orden = new Orden(pcliente, this.cliente, this.np, this.producto);
+            orden = new Orden(pcliente, this.cliente, this.np, this.producto);
             System.out.println(orden.toString());
             DataSistema db = new DataSistema();
             db.orden.add(orden);
+            MadeOrden mo = new MadeOrden();
+            mo.addToArchive(orden, this.contacto.getCharacters().toString());
             System.out.println(db.getOrden().toString());
         }catch (NumberFormatException e){
             System.out.println(e);
